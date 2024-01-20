@@ -61,6 +61,13 @@ function Navbar() {
                     <span style={{fontFamily : "cursive" , color:"pink"}}> Verse</span>
                 </h2>
                 <div className="right-side">
+                    <div 
+                        className="geminiai_icon"
+                        onClick={() => navigate("/ai")}
+                    >
+                        ASK AI
+                    </div>
+
                     <div
                         className="profile hover-link"
                         // onClick={() => navigate(`/profile/${myProfile?._id}`)}

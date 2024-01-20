@@ -12,6 +12,7 @@ import LoadingBar from "react-top-loading-bar";
 import OnlyIfNotLoggedIn from "./components/OnlyIfNotLoggedIn";
 import toast, { Toaster } from "react-hot-toast";
 import Otp from "./pages/otp/Otp";
+import AI from "./pages/gemini/Gemini";
 
 export const TOAST_SUCCESS = "toast_success";
 export const TOAST_FAILURE = "toast_failure";
@@ -54,6 +55,10 @@ function App() {
                         <Route
                             path="/updateProfile"
                             element={<UpdateProfile />}
+                        />
+                        <Route 
+                            path="/ai"
+                            element={<AI/>}
                         />
                     </Route>
                 </Route>

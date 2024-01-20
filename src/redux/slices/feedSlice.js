@@ -15,6 +15,19 @@ export const getFeedData = createAsyncThunk(
     }
 );
 
+export const gemini = createAsyncThunk(
+    "user/ai",
+    async (data) => {
+        try {
+            const response = await axiosClient.post("/user/ai" , data);
+            // console.log("userProfile", response);
+            return response.result;
+        } catch (error) {
+            return Promise.reject(error);
+        } 
+    }
+);
+
 export const followAndUnfollowUser = createAsyncThunk(
     "user/followAndUnfollow",
     async (body) => {
