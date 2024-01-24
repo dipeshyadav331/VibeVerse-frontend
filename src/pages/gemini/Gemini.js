@@ -10,9 +10,7 @@ const Gemini = () => {
   const dispatch = useDispatch();
 
   const ask = async (e) => {
-    e.preventDefault();
-    console.log(queryy);
-    console.log("entered here");
+    e.preventDefault(); 
     const response = dispatch(
       gemini({
         query: queryy,
@@ -29,7 +27,6 @@ const Gemini = () => {
         <label>
           <input placeholder="Ask me Anything" onChange={(e) => setquery(e.target.value)} />
         </label>
-        {/* <button onClick={ask}>Ask</button> */}
         <div class="buttons">
             <button onClick={ask} class="blob-btn">
                 Ask

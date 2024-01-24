@@ -20,8 +20,7 @@ function CreatePost() {
         fileReader.readAsDataURL(file);
         fileReader.onload = () => {
             if (fileReader.readyState === fileReader.DONE) {
-                setPostImg(fileReader.result);
-                // console.log("img data", fileReader.result);
+                setPostImg(fileReader.result); 
             }
         };
     };
@@ -31,19 +30,33 @@ function CreatePost() {
             const result = await axiosClient.post('/posts', {
                 caption,
                 postImg
-            });
-            // console.log('post done', result);
+            }); 
+
             dispatch(getUserProfile({
                 userId: myProfile?._id
             }));
         } catch (error) {
-            // console.log('what is th error', error);
+            console.log(error);
         } finally {
             setCaption('');
             setPostImg('');
         }
-        
+    }
 
+    const generateCaption = async() => {
+        try {
+            const result = await axiosClient.post('/user/generate-caption', {
+                postImg
+            });
+            
+            dispatch(getUserProfile({
+                userId: myProfile?._id
+            }));  
+            
+            setCaption(result.result);
+        } catch (error) {
+            console.log(error);
+        } 
     }
 
     return (
@@ -82,6 +95,7 @@ function CreatePost() {
                             onChange={handleImageChange}
                         />
                     </div>
+                    <button className="post-btn btn-primary" onClick={generateCaption}>Generate Caption</button>
                     <button className="post-btn btn-primary" onClick={hanldePostSubmit}>Post</button>
                 </div>
             </div>
