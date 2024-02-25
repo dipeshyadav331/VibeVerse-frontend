@@ -25,7 +25,7 @@ const Gemini = () => {
     <div className="gemini_outer">
       <div class="wrapper">
         <label>
-          <input placeholder="Ask me Anything" onChange={(e) => setquery(e.target.value)} />
+          <input placeholder= "Tell me Something about Dipesh" onChange={(e) => setquery(e.target.value)} />
         </label>
         <div class="buttons">
             <button onClick={ask} class="blob-btn">
