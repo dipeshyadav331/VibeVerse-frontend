@@ -53,7 +53,7 @@ function Otp() {
                     Entered wrong email? <Link to="/signup">Signup</Link>
             </p>
         </div>
-        {/* <Footer /> */}
+        <Footer />
     </div>
   )
 }

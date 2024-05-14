@@ -16,7 +16,7 @@ function Home() {
             <div className="outlet" style={{ marginTop: "60px" }}>
                 <Outlet />
             </div>
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }
