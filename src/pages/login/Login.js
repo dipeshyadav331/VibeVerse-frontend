@@ -62,7 +62,7 @@ function Login() {
                     Do not have an account? <Link to="/signup">Sign Up</Link>
                 </p>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }
